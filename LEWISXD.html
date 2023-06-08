@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ABM</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      table th,
+      table td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+      form input[type="text"] {
+        padding: 6px;
+        width: 250px;
+      }
+      form input[type="submit"] {
+        padding: 6px 12px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      form input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ABM - Altas, Bajas y Modificaciones</h1>
+    <h2>Usuarios</h2>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Correo electrónico</th>
+        <th>Acciones</th>
+      </tr>
+      <tbody id="userTable"></tbody>
+    </table>
+
+    <h2>Agregar Usuario</h2>
+    <form id="addUserForm">
+      <label for="name">Nombre:</label>
+      <br />
+      <input type="text" id="name" required />
+      <br /><br />
+      <label for="email">Correo electrónico:</label>
+      <br />
+      <input type="text" id="email" required />
+      <br /><br />
+      <input type="submit" value="Agregar Usuario" />
+    </form>
+
+    <script>
+      // Datos de usuarios
+      var users = [];
+
+      // Obtener referencia a la tabla de usuarios
+      var userTable = document.getElementById("userTable");
+
+      // Renderizar la tabla de usuarios
+      function renderUserTable() {
+        // Limpiar tabla
+        userTable.innerHTML = "";
+
+        // Recorrer los usuarios y agregar filas a la tabla
+        users.forEach(function (user) {
+          var row = document.createElement("tr");
+          row.innerHTML =
+            "<td>" +
+            user.id +
+            "</td>" +
+            "<td>" +
+            user.name +
+            "</td>" +
+            "<td>" +
+            user.email +
+            "</td>" +
+            '<td><button onclick="editUser(' +
+            user.id +
+            ')">Editar</button>' +
+            '<button onclick="deleteUser(' +
+            user.id +
+            ')">Eliminar</button></td>';
+          userTable.appendChild(row);
+        });
+      }
+
+      // Agregar un usuario
+      document
+        .getElementById("addUserForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Obtener los valores del formulario
+          var name = document.getElementById("name").value;
+          var email = document.getElementById("email").value;
+
+          // Generar un ID único
+          var id = Date.now();
+
+          // Crear el objeto usuario
+          var user = {
+            id: id,
+            name: name,
+            email: email,
+          };
+
+          // Agregar el usuario al arreglo
+          users.push(user);
+          // Limpiar los campos del formulario
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+
+          // Renderizar la tabla actualizada
+          renderUserTable();
+        });
+
+      // Eliminar un usuario
+      function deleteUser(id) {
+        // Filtrar el arreglo de usuarios para excluir el usuario con el ID proporcionado
+        users = users.filter(function (user) {
+          return user.id !== id;
+        });
+
+        // Renderizar la tabla actualizada
+        renderUserTable();
+      }
+
+      // Editar un usuario
+      function editUser(id) {
+        // Encontrar el usuario con el ID proporcionado en el arreglo
+        var user = users.find(function (user) {
+          return user.id === id;
+        });
+
+        // Llenar los campos del formulario con los datos del usuario
+        document.getElementById("name").value = user.name;
+        document.getElementById("email").value = user.email;
+
+        // Eliminar el usuario del arreglo
+        users = users.filter(function (user) {
+          return user.id !== id;
+        });
+
+        // Renderizar la tabla actualizada
+        renderUserTable();
+      }
+    </script>
+  </body>
+</html>
