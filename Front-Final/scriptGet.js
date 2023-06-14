@@ -14,7 +14,10 @@ BtnTraer.addEventListener(`click`, (e) => {
     redirect: "follow",
   };
 
-  fetch("", requestOptions)
+  fetch(
+    "https://afip.tangofactura.com/Index/GetFullContribuyente/?cuit=30502680478",
+    requestOptions
+  )
     .then((response) => response.text())
     .then((data) => {
       let json = JSON.parse(data);
