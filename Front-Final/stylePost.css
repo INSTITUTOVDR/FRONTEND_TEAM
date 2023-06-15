@@ -1,0 +1,54 @@
+#titulo {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+  }
+  
+  #formulario {
+    max-width: 600px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar el formulario horizontalmente */
+    padding: 20px; /* Espacio interno del formulario */
+    font-size: 18px; /* Tamaño de la fuente del formulario */
+    color: white;
+  }
+  
+  #formulario label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  #formulario input[type="text"],
+  #formulario input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: white;
+  }
+  
+  #formulario button[type="submit"] {
+  padding: 8px 16px;
+  background-color:gray;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px; /* Tamaño de la fuente */
+  font-weight: bold; /* Grosor de la fuente */
+  text-transform: uppercase; /* Transformar el texto a mayúsculas */
+}
+
+#formulario button[type="submit"]:hover {
+  background-color: gray;
+}
+
+  
+  #formulario input[type="submit"]:hover {
+    background-color: gray;
+  }
+  
+  #formulario div {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  

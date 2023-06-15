@@ -125,3 +125,9 @@ p{color: white;}
     margin-left: -300%;
   }
 }
+
+
+.navbar-nav .nav-link,.nav-item,
+.navbar-brand, .dropdown-item {
+  color: white;
+}
