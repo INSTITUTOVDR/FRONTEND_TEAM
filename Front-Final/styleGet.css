@@ -1,50 +1,57 @@
-body{
-    display: grid;
-    place-content: center;
+body {
+  display: grid;
+  place-content: center;
 }
-footer p{
-    color: white;
+footer p {
+  color: white;
 }
-footer a{
-    color: white;
+footer a {
+  color: white;
 }
-h1{
-    margin-top: 50px;
-    margin-bottom: 20px;
+h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
-.container:not(footer .container){
-
-
-    border-color: black;
-    border-style: groove;
-    border-radius: 5px;
-    width: 50vw;
-    text-align: center;
-
-
+.container:not(footer .container) {
+  border-color: black;
+  border-style: groove;
+  border-radius: 5px;
+  width: 50vw;
+  text-align: center;
 }
 
-.btn:not(footer .btn){margin-block: 5px;}
-
-
-.card:not(footer .card){
-    border-color: black;
-    border-width: 5px;
-    margin-top: 10px;
-    margin-left: 10px;
-
-    
-
-    display: inline-grid;
-    place-content: center ;
-
-    text-align: center;
-    align-items: center;
-
-    width: 20vw;
-
-    background-color: transparent;
+.btn:not(footer .btn) {
+  margin-block: 5px;
 }
 
-.list{color: white;
-list-style-type: none;}
+.card:not(footer .card) {
+  border-color: black;
+  border-width: 5px;
+  margin-top: 10px;
+  margin-left: 10px;
+
+  display: inline-grid;
+  place-content: center;
+
+  text-align: center;
+  align-items: center;
+
+  width: 20vw;
+
+  background-color: transparent;
+}
+
+.list {
+  color: white;
+  list-style-type: none;
+}
+
+.form-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-delete input {
+  background: #fff;
+  margin: 10px;
+}

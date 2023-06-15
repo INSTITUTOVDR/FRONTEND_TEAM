@@ -15,7 +15,7 @@ BtnTraer.addEventListener(`click`, (e) => {
   };
 
   fetch(
-    "https://5ea1-190-120-115-22.sa.ngrok.io/api/Entities/GetEntities",
+    "https://d10a-190-120-115-22.sa.ngrok.io/api/Entities/GetEntities",
     requestOptions
   )
     .then((response) => response.text())
