@@ -14,7 +14,10 @@ BtnTraer.addEventListener(`click`, (e) => {
     redirect: "follow",
   };
 
-  fetch("", requestOptions)
+  fetch(
+    "https://5ea1-190-120-115-22.sa.ngrok.io/api/Entities/GetEntities",
+    requestOptions
+  )
     .then((response) => response.text())
     .then((data) => {
       let json = JSON.parse(data);
@@ -27,28 +30,16 @@ BtnTraer.addEventListener(`click`, (e) => {
 
       Cont.appendChild(Contenedor);
 
-      for (let i in json.Contribuyente) {
+      for (let i in json[0]) {
         const J = document.createElement(`P`);
 
         J.style.color = `black`;
-        J.textContent = `${json.Contribuyente[i]}`;
+        J.textContent = `${json[0][i]}`;
         J.style.marginBlock = `1vw`;
 
         Contenedor.appendChild(J);
       }
-    })
-    .catch((error) => console.log("error", error));
-  swal({
-    title: `Atencion`,
-    html: `Algo Salio Mal`,
-    type: "error",
-    backdrop: true,
-    allowOutsideClick: false,
-    showCancelButton: false,
-    showConfirmButton: true,
-    cancelButtonColor: `#DD6B55`,
-    confirmButtonColor: `#DD6B55`,
-  });
+    });
 });
 
 function LimpiarPersonas() {
