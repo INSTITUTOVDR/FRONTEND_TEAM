@@ -50,6 +50,10 @@ btnEnviar.addEventListener('click', (e) => {
                     cancelButtonColor: '#DD6B55',
                     confirmButtonColor: '#DD6B55'
                 })
+                nombre.value = '';
+                apellido.value = '';
+                email.value = '';
+                descripcion.value = '';
             } else {
                 swal({
                     title: 'Atencion',
