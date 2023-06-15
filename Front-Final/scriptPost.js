@@ -10,10 +10,10 @@ btnEnviar.addEventListener('click', (e) => {
 
     const formData = new FormData();      
    
-    formData.append('Name', nombre.value);
-    formData.append('Surname', apellido.value);
-    formData.append('Email', email.value);
-    formData.append('Description', descripcion.value);
+    formData.append('name', nombre.value);
+    formData.append('surname', apellido.value);
+    formData.append('email', email.value);
+    formData.append('description', descripcion.value);
 
 
     if (nombre.value === '' || apellido.value === '' || email.value === '' || descripcion.value === '') {
