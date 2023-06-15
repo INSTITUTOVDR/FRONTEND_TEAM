@@ -29,15 +29,20 @@ BtnTraer.addEventListener(`click`, (e) => {
       Contenedor.classList.add(`card`);
 
       Cont.appendChild(Contenedor);
+      for (let obj = 0; obj < json.length; obj++) {
+        const L = document.createElement(`P`);
+        Contenedor.appendChild(L);
+        for (let i in json[obj]) {
+          const J = document.createElement(`P`);
 
-      for (let i in json[0]) {
-        const J = document.createElement(`P`);
+          J.style.color = `black`;
+          J.textContent = `${json[obj][i]}`;
+          J.style.marginBlock = `1vw`;
 
-        J.style.color = `black`;
-        J.textContent = `${json[0][i]}`;
-        J.style.marginBlock = `1vw`;
+          L.textContent = "----------------";
 
-        Contenedor.appendChild(J);
+          Contenedor.appendChild(J);
+        }
       }
     });
 });
