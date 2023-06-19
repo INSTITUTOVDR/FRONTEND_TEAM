@@ -57,36 +57,30 @@
 
       <h1 id="titulo">Cargar Persona</h1>
       <form id="formulario" style="border-style: groove;">
-        <div style="margin-top: 20px;">
-          <label for="nombre">Nombre:</label>
-          <input type="text" id="nombre" />
+
+        <div class="mb-3">
+          <label for="InputId" class="form-label">Id_Entitie</label>
+          <input type="text" class="form-control" id="id_Entitie" style="color: black;" />
         </div>
-  
-        <br>
-  
-        <div>
-          <label for="apellido">Apellido:</label>
-          <input type="text" id="apellido" />
-        </div>
-  
-        <br>
-  
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" />
-        </div>
-  
-        <br />
-        <div >
-          <label for="email">Descripcion:</label>
-          <input type="text" id="descripcion" />
-        </div>
-  
-        <br />
-       
-        <div style="margin-bottom: 20px;">
-            <button type="submit" id="post">Enviar</button>
-        </div>
+      <div class="mb-3">
+        <label for="InputNombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" style="color: black;" />
+      </div>
+      <div class="mb-3">
+          <label for="InputApellido" class="form-label">Apellido</label>
+          <input type="text" class="form-control" id="apellido" style="color: black;" />
+      </div>
+      <div class="mb-3">
+          <label for="InputEmail" class="form-label">Email</label>
+          <input type="text" class="form-control" id="email" style="color: black;" />
+      </div>
+      <div class="mb-3">
+        <label for="InputDescripcion" class="form-label">Descripción</label>
+        <textarea class="form-control" id="descripcion" rows="3" style="color: black;"></textarea>
+      </div>
+      <button type="button" onclick="PostFromForm()" class="btn btn-primary" style="background-color: gray;">
+        Aceptar
+      </button>
       </form>
    
 
