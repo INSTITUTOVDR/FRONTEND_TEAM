@@ -1,5 +1,5 @@
 function PostFromForm() {
-  var url = "https://c453-190-120-115-22.sa.ngrok.io/api/Entities/AddModifyEntities";
+  var url = "http://ivdr.somee.com/api/Entities/AddModifyEntities";
 
   let id = document.getElementById("id_Entitie").value;
   let name = document.getElementById("nombre").value;
