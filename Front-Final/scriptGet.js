@@ -14,10 +14,7 @@ BtnTraer.addEventListener(`click`, (e) => {
     redirect: "follow",
   };
 
-  fetch(
-    "https://5ea1-190-120-115-22.sa.ngrok.io/api/Entities/GetEntities",
-    requestOptions
-  )
+  fetch("http://ivdr.somee.com/api/entities/getentities", requestOptions)
     .then((response) => response.text())
     .then((data) => {
       let json = JSON.parse(data);
@@ -29,14 +26,14 @@ BtnTraer.addEventListener(`click`, (e) => {
       Contenedor.classList.add(`card`);
 
       Cont.appendChild(Contenedor);
-      for (let obj = 0; obj < json.length; obj++) {
+      for (let obj = 0; obj < json.entities.length; obj++) {
         const L = document.createElement(`P`);
         Contenedor.appendChild(L);
-        for (let i in json[obj]) {
+        for (let i in json.entities[obj]) {
           const J = document.createElement(`P`);
 
           J.style.color = `black`;
-          J.textContent = `${json[obj][i]}`;
+          J.textContent = `${json.entities[obj][i]}`;
           J.style.marginBlock = `1vw`;
 
           L.textContent = "----------------";
